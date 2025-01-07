@@ -27,7 +27,7 @@ cd [nom-du-dossier]
 
 2. Lancez l'application avec Docker Compose :
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ## 🌐 Utilisation
@@ -58,13 +58,13 @@ projet/
 │   └── tasks/          # Templates des tâches
 ├── composer.json        # Dépendances PHP
 ├── Dockerfile          # Configuration Docker
-├── docker-compose.yml  # Configuration Docker Compose
+├── docker compose.yml  # Configuration Docker Compose
 └── init.sql           # Initialisation BD
 ```
 
 ## 🔧 Configuration
 
-### Variables d'environnement (docker-compose.yml)
+### Variables d'environnement (docker compose.yml)
 
 ```yaml
 # PostgreSQL
@@ -109,31 +109,31 @@ volumes:
 
 ```bash
 # Démarrer l'application
-docker-compose up
+docker compose up
 
 # Démarrer l'application en arrière-plan
-docker-compose up -d
+docker compose up -d
 
 # Arrêter l'application
-docker-compose down
+docker compose down
 
 # Reconstruire les containers
-docker-compose up --build
+docker compose up --build
 
 # Voir les logs
-docker-compose logs
+docker compose logs
 
 # Accéder au container PHP
-docker-compose exec php bash
+docker compose exec php bash
 
 # Accéder à la base de données
-docker-compose exec db psql -U postgres -d todolist
+docker compose exec db psql -U postgres -d todolist
 
 # Accéder à pgAdmin
 http://localhost:8081
 
 # Redémarrer pgAdmin si nécessaire
-docker-compose restart pgadmin
+docker compose restart pgadmin
 ```
 
 ### Configuration initiale de pgAdmin
