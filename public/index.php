@@ -3,10 +3,10 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\HomeController;
-use App\Controllers\InscriptionController;
+use App\Controllers\UserController;
 
 $homecontroller = new HomeController();
-$inscriptioncontroller = new InscriptionController();
+$usercontroller = new UserController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -15,12 +15,16 @@ switch ($path) {
         $homecontroller->index();
         break;
 
-    case '/inscription':
-        $inscriptioncontroller->index();
+    case '/user':
+        $usercontroller->index();
         break;
     
     case '/create_account':
-        $inscriptioncontroller->create_account();
+        $usercontroller->create_account();
+        break;
+
+    case '/login_account':
+        $usercontroller->login_account();
         break;
 
     default:

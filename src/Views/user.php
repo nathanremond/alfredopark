@@ -1,3 +1,9 @@
+<?php
+include 'session.php';
+
+$user_firstname = getUserFirstname();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
 </head>
 <body>
+    <h1>Vous êtes connecté <?php echo $_SESSION['user_firstname'] ?></h1>
     <div class="container">
        
         <div class="form-section" x-data="{ lastname: '', firstname: '', email: '', password: '' }">
@@ -30,14 +37,14 @@
         </div>
 
        
-        <div class="form-section" x-data="{ mail: '', mdp: '' }">
+        <div class="form-section" x-data="{ email_login: '', password_login: '' }">
             <h2>Se connecter</h2>
-            <form action="login.php" method="POST">
-                <label for="mail-login">Mail</label>
-                <input type="email" id="mail-login" name="mail" x-model="mail" required>
+            <form action="/login_account" method="POST">
+                <label for="email_login">Mail</label>
+                <input type="email" id="email_login" name="email_login" x-model="email_login" required>
 
-                <label for="mdp">Mot de passe</label>
-                <input type="password" id="mdp" name="mdp" x-model="mdp" required>
+                <label for="password_login">Mot de passe</label>
+                <input type="password" id="password_login" name="password_login" x-model="password_login" required>
 
                 <button type="submit">Se connecter</button>
             </form>
