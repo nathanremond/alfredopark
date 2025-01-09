@@ -4,31 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfredo's Park</title>
-</head>
-<body>
-
-    <h1>Le parc</h1>
-    <p>Le parc d'attractions Alfredo's Fazbear est un lieu captivant conçu pour offrir une expérience immersive et inoubliable, que vous soyez un enfant ou un adulte.
-
-    Pour les adultes :
-    Attractions à sensations fortes : Profitez de merveilleux montagnes russes.
-
-    Pour les petits :
-    Zones interactives et ludiques : Des espaces colorés avec des jeux éducatifs et interactifs, adaptés aux plus jeunes.
-    Manèges en famille : Des attractions douces et amusantes comme des carrousels et des mini-trains.
-
-    Le parc met un point d’honneur à garantir la sécurité et le confort des visiteurs de tous âges. Des espaces de détente, des restaurants thématiques, et des zones pour les tout-petits sont prévus pour satisfaire toute la famille.</p>
-
-
-    
-    <p>Infos pratique :
-
-    <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horaires</title>
     <style>
         table {
             width: 50%;
