@@ -21,8 +21,8 @@ Site du parc d'attraction Alfredo's Park
 
 1. Clonez le repository :
 ```bash
-git clone [url-du-repo]
-cd [nom-du-dossier]
+git clone https://github.com/nathanremond/alfredopark
+cd alfredopark
 ```
 
 2. Lancez l'application avec Docker Compose :
@@ -212,3 +212,18 @@ L'application utilise trois services Docker :
 ## 📄 Licence
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## QA
+
+- Le site a l'air fonctionnel.
+- Utilisation de HTML, CSS, JavaScript, AJAX et TailwindCSS.
+- Readme clair 
+- Site dynamique, les pages chargent vite
+- Des fonctionnalités ne marchent pas encore comme la barre de recherche ou le filtre
+- Connexion et inscription fonctionnels
+- Bonne navigation
+- Bon design
+- Code propre
+
+Bon site dans l'ensemble mais avec un manque de fonctionnalité qui rend l'expérience utilisateur moins pratique
