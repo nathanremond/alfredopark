@@ -10,6 +10,8 @@ $usercontroller = new UserController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
+require __DIR__ . '/../src/Views/includes/header.php';
+
 switch ($path) {
     case '/':
         $homecontroller->index();
@@ -39,3 +41,5 @@ switch ($path) {
         http_response_code(404);
         echo "Page not found";
 }
+
+require __DIR__ . '/../src/Views/includes/footer.php';
