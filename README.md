@@ -1,14 +1,14 @@
-# Application Todo List
+# Site parc d'attraction
 
-Une application simple de gestion de tâches construite avec PHP et PostgreSQL.
+Site du parc d'attraction Alfredo's Park
 
 ## 🚀 Fonctionnalités
 
-- Affichage des tâches
-- Ajout de nouvelles tâches
-- Marquage des tâches comme complétées/non complétées
-- Suppression des tâches
-- Persistance des données en base PostgreSQL
+- Affichage des attractions
+- Ajout d'utilisateurs
+- Connexion d'un utilisateur
+- Réservation de tickets
+- Réservation d'un restaurant
 
 ## 🛠 Prérequis
 
@@ -21,8 +21,8 @@ Une application simple de gestion de tâches construite avec PHP et PostgreSQL.
 
 1. Clonez le repository :
 ```bash
-git clone [url-du-repo]
-cd [nom-du-dossier]
+git clone https://github.com/nathanremond/alfredopark
+cd alfredopark
 ```
 
 2. Lancez l'application avec Docker Compose :
@@ -39,29 +39,6 @@ Accédez à l'application via votre navigateur : [http://localhost:8080](http://
 
 pgAdmin est accessible via votre navigateur : [http://localhost:8081](http://localhost:8081)
 
-
-## 📁 Structure du projet
-
-```
-projet/
-├── public/               # Fichiers publics
-│   ├── index.php        # Point d'entrée
-│   ├── .htaccess       
-│   └── css/
-│       └── style.css    # Styles CSS
-├── src/                 # Code source
-│   ├── Controllers/     # Contrôleurs
-│   ├── Models/         # Modèles
-│   └── Database/       # Configuration BD
-├── templates/           # Templates
-│   ├── layout.php      # Template principal
-│   └── tasks/          # Templates des tâches
-├── composer.json        # Dépendances PHP
-├── Dockerfile          # Configuration Docker
-├── docker compose.yml  # Configuration Docker Compose
-└── init.sql           # Initialisation BD
-```
-
 ## 🔧 Configuration
 
 ### Variables d'environnement (docker compose.yml)
@@ -71,7 +48,7 @@ projet/
 environment:
   DB_HOST: db
   DB_PORT: 5432
-  DB_NAME: todolist
+  DB_NAME: alfredopark
   DB_USER: postgres
   DB_PASSWORD: password
 
@@ -86,11 +63,72 @@ environment:
 La base de données PostgreSQL est initialisée avec la structure suivante :
 
 ```sql
-CREATE TABLE tasks (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    completed BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE users(
+   id_user SERIAL NOT NULL,
+   lastname VARCHAR(50) NOT NULL,
+   firstname VARCHAR(50) NOT NULL,
+   email VARCHAR(100) NOT NULL,
+   password VARCHAR(50) NOT NULL,
+   PRIMARY KEY(id_user)
+);
+
+CREATE TABLE category(
+   id_category SERIAL NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   PRIMARY KEY(id_category)
+);
+
+CREATE TABLE restaurant(
+   id_restaurant SERIAL NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   url_picture VARCHAR(500) NOT NULL,
+   PRIMARY KEY(id_restaurant)
+);
+
+CREATE TABLE ticket(
+   id_ticket SERIAL NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   price NUMERIC(15,2) NOT NULL,
+   PRIMARY KEY(id_ticket)
+);
+
+CREATE TABLE menu(
+   id_menu SERIAL NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   url_picture VARCHAR(500) NOT NULL,
+   price NUMERIC(15,2) NOT NULL,
+   id_restaurant INTEGER NOT NULL,
+   PRIMARY KEY(id_menu),
+   FOREIGN KEY(id_restaurant) REFERENCES restaurant(id_restaurant)
+);
+
+CREATE TABLE attraction(
+   id_attraction SERIAL NOT NULL,
+   name VARCHAR(50) NOT NULL,
+   url_picture VARCHAR(500) NOT NULL,
+   infos TEXT NOT NULL,
+   id_category INTEGER NOT NULL,
+   PRIMARY KEY(id_attraction),
+   FOREIGN KEY(id_category) REFERENCES category(id_category)
+);
+
+CREATE TABLE restaurant_books(
+   id_user INTEGER NOT NULL,
+   id_restaurant INTEGER NOT NULL,
+   seats INTEGER NOT NULL,
+   book_date TIMESTAMP NOT NULL,
+   PRIMARY KEY(id_user, id_restaurant),
+   FOREIGN KEY(id_user) REFERENCES users(id_user),
+   FOREIGN KEY(id_restaurant) REFERENCES restaurant(id_restaurant)
+);
+
+CREATE TABLE ticket_buy(
+   id_user INTEGER NOT NULL,
+   id_ticket INTEGER NOT NULL,
+   visit_date DATE NOT NULL,
+   PRIMARY KEY(id_user, id_ticket),
+   FOREIGN KEY(id_user) REFERENCES users(id_user),
+   FOREIGN KEY(id_ticket) REFERENCES ticket(id_ticket)
 );
 ```
 
@@ -102,7 +140,6 @@ Pour le développement, les volumes Docker sont configurés pour refléter les c
 volumes:
   - ./public:/var/www/html/public
   - ./src:/var/www/html/src
-  - ./templates:/var/www/html/templates
 ```
 
 ## 🚀 Commandes utiles
@@ -172,14 +209,21 @@ L'application utilise trois services Docker :
 - Requêtes préparées pour la base de données
 - Validation des entrées utilisateur
 
-## 🤝 Contribution
-
-1. Fork le projet
-2. Créez votre branche (`git checkout -b feature/AmazingFeature`)
-3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
-
 ## 📄 Licence
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+
+## QA
+
+- Le site a l'air fonctionnel.
+- Utilisation de HTML, CSS, JavaScript, AJAX et TailwindCSS.
+- Readme clair 
+- Site dynamique, les pages chargent vite
+- Des fonctionnalités ne marchent pas encore comme la barre de recherche ou le filtre
+- Connexion et inscription fonctionnels
+- Bonne navigation
+- Bon design
+- Code propre
+
+Bon site dans l'ensemble mais avec un manque de fonctionnalité qui rend l'expérience utilisateur moins pratique
