@@ -65,3 +65,7 @@ CREATE TABLE ticket_buy(
    FOREIGN KEY(id_user) REFERENCES users(id_user),
    FOREIGN KEY(id_ticket) REFERENCES ticket(id_ticket)
 );
+
+INSERT INTO ticket (name, price) VALUES ('Enfants', 35.00);
+INSERT INTO ticket (name, price) VALUES ('Adultes', 50.00);
+INSERT INTO ticket (name, price) VALUES ('Pass Alfredo', 350.00);

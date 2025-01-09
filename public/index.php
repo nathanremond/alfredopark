@@ -4,9 +4,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\UserController;
+use App\Controllers\TicketController;
 
 $homecontroller = new HomeController();
 $usercontroller = new UserController();
+$ticketcontroller = new TicketController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -37,6 +39,14 @@ switch ($path) {
         $usercontroller->logout_account();
         break;
 
+    case '/billetterie':
+        $ticketcontroller->index();
+        break;
+    
+    case '/create':
+        $ticketcontroller->create();
+        break;
+    
     default:
         http_response_code(404);
         echo "Page not found";
