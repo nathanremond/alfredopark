@@ -27,6 +27,14 @@ switch ($path) {
         $usercontroller->login_account();
         break;
 
+    case '/profile':
+        $usercontroller->profile();
+        break;
+
+    case '/logout_account':
+        $usercontroller->logout_account();
+        break;
+
     default:
         http_response_code(404);
         echo "Page not found";

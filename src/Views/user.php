@@ -1,7 +1,9 @@
 <?php
-include 'session.php';
-
-$user_firstname = getUserFirstname();
+session_start();
+if(isset($_SESSION['user_email'])){
+    header('Location: /profile');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +16,6 @@ $user_firstname = getUserFirstname();
     <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
 </head>
 <body>
-    <h1>Vous êtes connecté <?php echo $_SESSION['user_firstname'] ?></h1>
     <div class="container">
        
         <div class="form-section" x-data="{ lastname: '', firstname: '', email: '', password: '' }">
