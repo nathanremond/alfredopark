@@ -1,4 +1,4 @@
-<div x-data="{
+<div class="body" x-data="{
         prices: { child: 35, adult: 50, pass: 350 },
         quantities: { child: 0, adult: 0, pass: 0 },
         get total() {
