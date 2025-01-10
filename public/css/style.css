@@ -278,3 +278,55 @@ form {
     color: orange;
 }
 
+.body {
+    padding: 20px;
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.row h2 {
+    font-size: 1.5rem; 
+    color: #f2a900;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f2a900;
+    display: inline-block;
+}
+
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+}
+
+.item {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px; 
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.item img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px; 
+}
+
+.item h3 {
+    font-size: 1.2rem; 
+    color: #f2a900;
+    margin-bottom: 8px; 
+}
+
+.item p {
+    font-size: 0.9rem; 
+    color: #ccc;
+    line-height: 1.4;
+}
+
