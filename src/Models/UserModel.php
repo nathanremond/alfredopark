@@ -28,4 +28,10 @@ class UserModel {
         $stmt->execute([$id_user]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function getBookByUser($id_user) {
+        $stmt = $this->pdo->prepare('SELECT * FROM book WHERE id_user = :id_user');
+        $stmt->execute([$id_user]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

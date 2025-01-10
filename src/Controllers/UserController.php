@@ -20,6 +20,7 @@ class UserController
     public function profile() { 
         $id_user = $_SESSION['user_id'];
         $tickets = $this->userModel->getTicketByUser($id_user);
+        $books = $this->userModel->getBookByUser($id_user);
         require __DIR__ . '/../Views/profile.php';
     }
 

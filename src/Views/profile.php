@@ -19,6 +19,15 @@ foreach ($tickets as $ticket) {
 }
 ?>
 
+<h2>Réservations au Alfredo's Pizza</h2>
+
+<?php
+foreach ($books as $book) { ?>
+    <p>Nombres de personnes: <?=$book['seats']?></p>
+    <p>Date et heure de la réservation: <?=$book['book_date']?></p>
+<?php }
+?>
+
 
 <form action="/logout_account" method="post">
     <button type="submit">Déconnexion</button>
