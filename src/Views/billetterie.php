@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfredo's Park</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-</head>
-<body x-data="{
+<div x-data="{
         prices: { child: 35, adult: 50, pass: 350 },
         quantities: { child: 0, adult: 0, pass: 0 },
         get total() {
@@ -60,5 +51,4 @@
             <button type="submit">Soumettre</button>
         </form>
     </section>
-</body>
-</html>
+</div>
