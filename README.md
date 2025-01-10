@@ -146,16 +146,3 @@ docker compose restart pgadmin
 ## 📄 Licence
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-## QA
-
-- Le site a l'air fonctionnel.
-- Utilisation de HTML, CSS, JavaScript, AJAX et TailwindCSS.
-- Readme clair 
-- Site dynamique, les pages chargent vite
-- Des fonctionnalités ne marchent pas encore comme la barre de recherche ou le filtre
-- Connexion et inscription fonctionnels
-- Bonne navigation
-- Bon design
-
-Bon site dans l'ensemble mais avec un manque de fonctionnalité qui rend l'expérience utilisateur moins pratique
