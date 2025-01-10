@@ -20,7 +20,7 @@ class TicketController{
         require __DIR__ . '/../Views/home.php';
     }
 
-    public function createTicket(){
+    public function createTicketBuy(){
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $child = $_POST['quantities']['child'] ?? '';
             $adult = $_POST['quantities']['adult'] ?? '';

@@ -24,7 +24,7 @@ session_start();
         <nav class="menu">
             <a href="/">Accueil</a>
             <a href="/billetterie">Billetterie</a>
-            <a href="#">Attractions et Restaurant</a>
+            <a href="/attractionsetrestaurant">Attractions et Restaurant</a>
         </nav>
 
         <!-- Icone à droite -->

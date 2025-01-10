@@ -13,7 +13,7 @@
 
     <section class="form-section">
         <h2>Réservez vos billets</h2>
-        <form action="/create" method="post">
+        <form action="/create_ticket_buy" method="post">
             <label for="visit_date">Date de réservation:</label>
             <input type="date" id="visit_date" name="visit_date" required>
 
