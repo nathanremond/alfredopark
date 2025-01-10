@@ -3,6 +3,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\AttractionController;
+use App\Controllers\BookController;
 use App\Controllers\HomeController;
 use App\Controllers\RestaurantController;
 use App\Controllers\UserController;
@@ -13,6 +14,7 @@ $usercontroller = new UserController();
 $ticketcontroller = new TicketController();
 $attractioncontroller = new AttractionController();
 $restaurantcontroller = new RestaurantController();
+$bookcontroller = new BookController();
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
@@ -57,6 +59,10 @@ switch ($path) {
 
     case '/restaurant':
         $restaurantcontroller->index();
+        break;
+
+    case '/create_book':
+        $bookcontroller->create_book();
         break;
     
     default:
