@@ -14,7 +14,7 @@ class AttractionController{
 
     public function index() {
         $attractions = $this->attractionModel->getAttractions();
-        require __DIR__ . '/../Views/attractionsetrestaurant.php';
+        require __DIR__ . '/../Views/attractions.php';
     }
     
 }

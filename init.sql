@@ -81,6 +81,10 @@ INSERT INTO attraction (name, url_picture, infos, id_category) VALUES ('Le carro
 INSERT INTO attraction (name, url_picture, infos, id_category) VALUES ('L''aire de jeu Alfredo', '/images/airedejeu.png', 'Sécurisée et adaptée à tous les âges, cette aire de jeu promet aventure et amusement, avec une touche de suspense qui plaira aux jeunes explorateurs', 2);
 INSERT INTO attraction (name, url_picture, infos, id_category) VALUES ('Neon coaster', '/images/neoncoaster.png', 'La montagne russe la plus récente et audacieuse de sa génération. Cette attraction vous propulse dans un univers vibrant de lumières néon, de tunnels lumineux et d''effets sonores immersifs.', 1);
 
+INSERT INTO restaurant (name, url_picture) VALUES ('Alfredo''s Pizza', '/images/restaurantfreddy.jpg');
+
+INSERT INTO menu (name, url_picture, price, id_restaurant) VALUES ('Menu Alfredo''s Pizza', '/images/menu1.png', 19.99, 1);
+
 INSERT INTO ticket (name, price) VALUES ('Enfants', 35.00);
 INSERT INTO ticket (name, price) VALUES ('Adultes', 50.00);
 INSERT INTO ticket (name, price) VALUES ('Pass Alfredo', 350.00);
