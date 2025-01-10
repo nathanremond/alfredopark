@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -18,14 +22,14 @@
 
         <!-- Menu -->
         <nav class="menu">
-            <a href="#">Accueil</a>
-            <a href="#">Billetterie</a>
-            <a href="#">Attraction et Resto</a>
+            <a href="/">Accueil</a>
+            <a href="/billetterie">Billetterie</a>
+            <a href="#">Attractions et Restaurant</a>
         </nav>
 
         <!-- Icone à droite -->
         <div class="icon">
-            <img src="/images/utilisateurAlfredo.png" alt="Icône cliquable">
+            <a href="/user"><img src="/images/utilisateurAlfredo.png" alt="Icône cliquable"></a>
         </div>
 </header>
         

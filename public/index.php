@@ -44,7 +44,7 @@ switch ($path) {
         break;
     
     case '/create':
-        $ticketcontroller->create();
+        $ticketcontroller->createTicket();
         break;
     
     default:

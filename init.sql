@@ -47,24 +47,29 @@ CREATE TABLE attraction(
    FOREIGN KEY(id_category) REFERENCES category(id_category)
 );
 
-CREATE TABLE restaurant_books(
-   id_user INTEGER NOT NULL,
-   id_restaurant INTEGER NOT NULL,
+CREATE TABLE book(
+   Id_book SERIAL NOT NULL,
    seats INTEGER NOT NULL,
    book_date TIMESTAMP NOT NULL,
-   PRIMARY KEY(id_user, id_restaurant),
-   FOREIGN KEY(id_user) REFERENCES users(id_user),
-   FOREIGN KEY(id_restaurant) REFERENCES restaurant(id_restaurant)
+   id_restaurant INTEGER NOT NULL,
+   id_user INTEGER NOT NULL,
+   PRIMARY KEY(Id_book),
+   FOREIGN KEY(id_restaurant) REFERENCES restaurant(id_restaurant),
+   FOREIGN KEY(id_user) REFERENCES users(id_user)
 );
 
+
 CREATE TABLE ticket_buy(
-   id_user INTEGER NOT NULL,
-   id_ticket INTEGER NOT NULL,
+   id_ticket_buy SERIAL NOT NULL,
    visit_date DATE NOT NULL,
-   PRIMARY KEY(id_user, id_ticket),
-   FOREIGN KEY(id_user) REFERENCES users(id_user),
-   FOREIGN KEY(id_ticket) REFERENCES ticket(id_ticket)
+   id_ticket INTEGER NOT NULL,
+   id_user INTEGER NOT NULL,
+   PRIMARY KEY(id_ticket_buy),
+   FOREIGN KEY(id_ticket) REFERENCES ticket(id_ticket),
+   FOREIGN KEY(id_user) REFERENCES users(id_user)
 );
+
+INSERT INTO users (lastname, firstname, email, password) VALUES ('Toto', 'Titi', 'test@mail.com', '1234');
 
 INSERT INTO ticket (name, price) VALUES ('Enfants', 35.00);
 INSERT INTO ticket (name, price) VALUES ('Adultes', 50.00);
